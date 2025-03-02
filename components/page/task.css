@@ -1,0 +1,28 @@
+.task{
+    width:65%;
+    height:60px;
+    background:white;
+    /* border:solid black 1px; */
+    border-radius:1em;
+    cursor: pointer;
+    display:flex;
+}
+.task__text{
+    align-self:center;
+    margin-left:1em;
+    font-size:1.6em;
+}
+.task:hover{
+    transform: scale(1.03);
+    box-shadow: 0 2px 8px #54bcdf;
+ }
+ .task__category{
+    color:steelblue;
+    margin-right:0.5em;
+    align-self:center;
+    font-size:1.6em;
+ }
+ .task__block{
+    margin-left:auto;
+    align-self:center;
+ }

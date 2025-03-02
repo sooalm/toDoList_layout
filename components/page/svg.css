@@ -1,0 +1,35 @@
+.svgPic{
+    height:24px;
+    width:24px;
+}
+.svgPic--search{
+   
+    color:black;
+    position:absolute;
+    right:5%;
+    top:30%;
+}
+.main__panel__block{
+    position:relative;
+}
+.svgPic:hover{
+    color:#53EAFD;
+}
+
+.svgChoicer{
+    align-self:center;
+    display:flex;
+    gap:1em;
+    color:#99A1AF;
+}
+.task__pic{
+    height:50px;
+    width:50px;
+    align-self:center;
+    color:rgb(0, 0, 0);
+    margin-left:0.5em;
+    pointer-events: none;
+}
+.task:hover .task__pic{
+    color:#53EAFD; 
+}

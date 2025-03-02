@@ -1,0 +1,34 @@
+.input{
+    width:240px; 
+    height:60px;
+    border-radius:10px;
+    font-size: 1.5em;
+}
+.input--search{
+    width:198px;
+    padding-right:38px;
+    padding-left:10px;
+}
+.input--withBorder{
+    
+    border: 2px solid #ccc;
+    background: #fff;
+    box-shadow: 
+      inset 0 0 0 2px #364153, /* "Внутренняя" граница */
+      0 0 0 1px #ffffff;    /* "Выступающая" часть */
+}
+.input__taskDescription{
+    width:500px;
+}
+.input__tags{
+    width:250px;
+}
+.checkbox{
+  font-size:1.2em;
+  gap:0.5em;
+  align-self:center;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+}

@@ -1,0 +1,40 @@
+.page{
+    background-color: #364153;
+    height:100%;
+    width:100%;
+    position:absolute;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer{
+    font-size: 1.5em;
+    margin-top:auto;
+    align-self: center;
+}
+
+.divider-line {
+    position: relative;
+    margin: 30px 0; /* Отступы сверху/снизу */
+    /* padding: 20px 0; Пространство вокруг линии */
+    margin-top: auto;
+  }
+
+  /* Сама линия */
+  .divider-line::after {
+    content: "";
+    position: absolute;
+    left: 5%;
+    top: 50%;
+    width: 90%; /* Ширина линии (можно менять) */
+    height: 0.2em; /* Толщина линии */
+    background: linear-gradient(
+      to right, 
+      transparent 0%, 
+      #76c6e1 50%, 
+      transparent 100%
+    );
+    transform: translateY(-50%);
+  }
