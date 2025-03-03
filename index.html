@@ -6,12 +6,13 @@
     <title>Document</title>
     <link rel="stylesheet" href="/styles.css">
 </head>
+<script type="module" src="main.js"></script>
 <body>
     <div class="page">
         <main class="main">
             <div class="main__panel">
-                <button class="bigButton">Clear toDos</button>  
-                <button class="bigButton">Restart Demo</button> 
+                <button id="clear" class="bigButton">Clear toDos</button>  
+                <button id="reload" class="bigButton">Restart Demo</button> 
                 
                 <label class="checkbox" for="check"> Sort by tags
                 <input id="check" type="checkbox" > 
@@ -25,7 +26,7 @@
                 </div>
 
                 </div>
-            <div class="main__task">
+            <div id="main" class="main__task">
                 
                 <div class="task"> 
                     <svg class="task__pic "> 
@@ -35,7 +36,7 @@
                   
                   <div class="task__block">
                   <span class="task__category">mental health</span>  
-                  <button class="smallButton smallButton--smoll">edit</button>  
+                  <button class="smallButton smallButton--task">edit</button>  
                   </div>
                 </div>
                 <div class="task">
@@ -46,7 +47,7 @@
 
                     <div class="task__block">
                     <span class="task__category">coolness</span> 
-                    <button class="smallButton smallButton--smoll">edit</button> 
+                    <button class="smallButton smallButton--task">edit</button> 
                     </div>
                 </div>
                 <div class="task">
@@ -57,7 +58,7 @@
                    
                     <div class="task__block">
                     <span class="task__category">health</span> 
-                    <button class="smallButton smallButton--smoll">edit</button>
+                    <button class="smallButton smallButton--task">edit</button>
                     </div>
                 </div>
                 <div class="task">
@@ -68,7 +69,7 @@
                     
                     <div class="task__block">
                     <span class="task__category">health</span>
-                    <button class="smallButton smallButton--smoll">edit</button> 
+                    <button class="smallButton smallButton--task">edit</button> 
                     </div>
                 </div>
                 <div class="task">
@@ -79,7 +80,7 @@
                     
                     <div class="task__block">
                     <span class="task__category">bloodlust</span>
-                    <button class="smallButton smallButton--smoll">edit</button>
+                    <button class="smallButton smallButton--task">edit</button>
                     </div>
                 </div>
                 <div class="task">
@@ -90,7 +91,7 @@
                     
                     <div class="task__block">
                     <span class="task__category">satiety</span>
-                    <button class="smallButton smallButton--smoll">edit</button>
+                    <button class="smallButton smallButton--task">edit</button>
                     </div>
                 </div>
                 <div class="task">
@@ -101,7 +102,7 @@
                     
                     <div class="task__block">
                     <span class="task__category">intelligence</span>
-                    <button class="smallButton smallButton--smoll">edit</button>
+                    <button class="smallButton smallButton--task">edit</button>
                     </div>
                 </div>
             </div>
@@ -109,34 +110,37 @@
             
             <div class="divider-line"></div>
             <div class="main__creationPanel">
-                <input type="text" class="input input__taskDescription input--withBorder" placeholder=" What's next?">
-                <input type="text" class="input input__tags input--withBorder" placeholder=" Tags/categories">
-                <button class="smallButton">add</button>
+                <input id="nameTask" type="text" class="input input__taskDescription input--withBorder" placeholder=" What's next?">
+                <input id="nameTag" type="text" class="input input__tags input--withBorder" placeholder=" Tags/categories">
+                <button id="addTask" class="smallButton">add</button>
             </div>
             <div class="svgTask">
                 
             </div>
-            <div class="svgChoicer"> 
-                <svg class="svgPic"> 
+            <div id="choicer" class="svgChoicer"> 
+                <svg name="meds" class="svgPic"> 
                 <use xlink:href="/assets/images/icons-sprites.svg#meds"></use>
                 </svg>
-                <svg class="svgPic"> 
-                <use xlink:href="/assets/images/icons-sprites.svg#meds"></use>
+                <svg name="shield" class="svgPic"> 
+                <use xlink:href="/assets/images/icons-sprites.svg#shield"></use>
                 </svg>
-                <svg class="svgPic"> 
-                <use xlink:href="/assets/images/icons-sprites.svg#meds"></use>
+                <svg name="sword" class="svgPic"> 
+                <use xlink:href="/assets/images/icons-sprites.svg#sword"></use>
                 </svg>
-                <svg class="svgPic"> 
-                <use xlink:href="/assets/images/icons-sprites.svg#meds"></use>
+                <svg name="bowl" class="svgPic"> 
+                <use xlink:href="/assets/images/icons-sprites.svg#bowl"></use>
                 </svg>
-                <svg class="svgPic"> 
-                <use xlink:href="/assets/images/icons-sprites.svg#meds"></use>
+                <svg name="horseKnight" class="svgPic"> 
+                <use xlink:href="/assets/images/icons-sprites.svg#horseKnight"></use>
                 </svg>
-                <svg class="svgPic"> 
-                <use xlink:href="/assets/images/icons-sprites.svg#meds"></use>
+                <svg name="boots" class="svgPic"> 
+                <use xlink:href="/assets/images/icons-sprites.svg#boots"></use>
                 </svg>
-                <svg class="svgPic"> 
-                <use xlink:href="/assets/images/icons-sprites.svg#meds"></use>
+                <svg name="pizza" class="svgPic"> 
+                <use xlink:href="/assets/images/icons-sprites.svg#pizza"></use>
+                </svg>
+                <svg name="book" class="svgPic"> 
+                <use xlink:href="/assets/images/icons-sprites.svg#book"></use>
                 </svg>
             </div>
             <footer class="footer">Project by Me not him | Hidalgo Task Manager | March 2025</footer>

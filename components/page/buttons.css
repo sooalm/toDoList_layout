@@ -6,6 +6,11 @@
     font-size: 1.3em;
     color: black;
 }
+.bigButton:hover{
+    background-color: black;
+    color:white;
+    transition:0.3s;
+}
 .smallButton{
     height:60px;
     width:80px;
@@ -17,7 +22,7 @@
     color:white;
     transition:0.3s;
 }
-.smallButton--smoll{
+.smallButton--task{
     height:55px;
     width:55px;
     align-self:center;

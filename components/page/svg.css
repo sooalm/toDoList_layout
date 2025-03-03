@@ -15,6 +15,9 @@
 .svgPic:hover{
     color:#53EAFD;
 }
+.svgPic--hover{
+    color:#53EAFD;
+}
 
 .svgChoicer{
     align-self:center;

@@ -1,12 +1,14 @@
+
 .page{
     background-color: #364153;
-    height:100%;
-    width:100%;
-    position:absolute;
+    height:100vh;
+    min-width:100vh;
+   
 
     display: flex;
     justify-content: center;
     align-items: center;
+
 }
 
 .footer{
