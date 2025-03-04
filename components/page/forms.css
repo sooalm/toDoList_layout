@@ -1,5 +1,6 @@
 .input{
     width:240px; 
+    padding-left:10px;
     height:60px;
     border-radius:10px;
     font-size: 1.5em;
@@ -7,10 +8,8 @@
 .input--search{
     width:198px;
     padding-right:38px;
-    padding-left:10px;
 }
 .input--withBorder{
-    
     border: 2px solid #ccc;
     background: #fff;
     box-shadow: 
@@ -18,10 +17,10 @@
       0 0 0 1px #ffffff;    /* "Выступающая" часть */
 }
 .input__taskDescription{
-    width:500px;
+    width:490px;
 }
 .input__tags{
-    width:250px;
+    width:240px;
 }
 .checkbox{
   font-size:1.2em;

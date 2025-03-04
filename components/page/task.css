@@ -26,3 +26,6 @@
     margin-left:auto;
     align-self:center;
  }
+ .task--hide{
+    display:none;
+ }

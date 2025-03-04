@@ -26,8 +26,8 @@ export function addTask() {
 
             let nameTag = document.getElementById("nameTag");
             let valueTag;
-            // if(!nameTag.value)valueTag="";
-            // else 
+            if(!nameTag.value)valueTag="task";
+             else
             valueTag = nameTag.value;
 
             const main = document.getElementById("main");
