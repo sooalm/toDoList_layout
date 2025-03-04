@@ -25,8 +25,10 @@ export function addTask() {
             }
 
             let nameTag = document.getElementById("nameTag");
-            console.log(nameTag.value)
-            let valueTag = nameTag.value;
+            let valueTag;
+            // if(!nameTag.value)valueTag="";
+            // else 
+            valueTag = nameTag.value;
 
             const main = document.getElementById("main");
 
@@ -34,12 +36,13 @@ export function addTask() {
             newTask.classList.add('task');
             
             let svg = document.querySelector('.svgPic--hover');
-            let svgName=svg.getAttribute('name');
-            if(!svgName) svgName="unknown";
-            svg=document.createElement("svg");
+            let svgName ="unknown";
+            if(svg) svgName=svg.getAttribute('name');
+
+            svg=document.createElementNS("http://www.w3.org/2000/svg","svg");
             svg.classList.add("task__pic");
             let svg__use=document.createElementNS("http://www.w3.org/2000/svg","use");
-            svg__use.setAttributeNS("http://www.w3.org/1999/xlink", "href", "/assets/images/icons-sprites.svg#"+svgName);
+            svg__use.setAttributeNS("http://www.w3.org/1999/xlink", 'href', "/assets/images/icons-sprites.svg#"+svgName);
             // svg__use.setAttribute("href", "/assets/images/icons-sprites.svg#"+svgName);
             svg.appendChild(svg__use);
             newTask.appendChild(svg);

@@ -14,7 +14,7 @@ const sortedElements = Array.from(elements).sort(( a, b) => {
 const parent = elements[0].parentNode;
 // console.log(parent);
 sortedElements.forEach( (element, i)=> {
-        console.log("процесс идет -->" +  element );
+        // console.log("процесс идет -->" +  element );
         parent.appendChild(element);
     });
 }
