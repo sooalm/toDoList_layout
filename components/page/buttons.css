@@ -17,14 +17,25 @@
     background: white;
     border-radius:1em;
 }
-.smallButton:hover{
+.smallButton--add:hover{
     background-color: black;
     color:white;
     transition:0.3s;
 }
-.smallButton--task{
+/* .smallButton--task{
     height:55px;
     width:55px;
     align-self:center;
     margin-right:5px;
+} */
+.task .smallButton{
+    height:55px;
+    width:55px;
+    align-self:center;
+    margin-right:5px;
+}
+.task:not(.task--through):hover .smallButton:hover{
+    background-color: black;
+    color:white;
+    transition:0.3s;
 }

@@ -6,13 +6,14 @@
     border-radius:1em;
     cursor: pointer;
     display:flex;
+    user-select: none;  
 }
 .task__text{
     align-self:center;
     margin-left:1em;
     font-size:1.6em;
 }
-.task:hover{
+.task:not(.task--through):hover{
     transform: scale(1.03);
     box-shadow: 0 2px 8px #54bcdf;
  }
@@ -28,4 +29,20 @@
  }
  .task--hide{
     display:none;
+ }
+ .task--through{
+    position: relative;
+    background:gray;
+    opacity:0.7;
+ }
+ .task--through::before{
+    content: "";
+    position: absolute;
+    left: 1%;
+    top: 50%;
+    width: 98%;
+    height: 3px;
+    background: #000;
+    transform: translateY(-50%);
+    border-radius: 10px;
  }

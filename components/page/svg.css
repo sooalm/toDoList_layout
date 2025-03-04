@@ -3,7 +3,6 @@
     width:24px;
 }
 .svgPic--search{
-   
     color:black;
     position:absolute;
     right:5%;
@@ -33,6 +32,6 @@
     margin-left:0.5em;
     pointer-events: none;
 }
-.task:hover .task__pic{
+.task:not(.task--through):hover .task__pic{
     color:#53EAFD; 
 }
