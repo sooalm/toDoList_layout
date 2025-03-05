@@ -1,3 +1,4 @@
+import { safe } from './localStorage.js';
 export function clearRestart() { 
     const clear = document.getElementById("clear");
     if(clear){
@@ -7,8 +8,10 @@ export function clearRestart() {
             elements.forEach(element => {
                 element.remove(); // Удалить каждый элемент
               });
+              safe();
             }
         })
+     
     }
 
     const reload = document.getElementById("reload");

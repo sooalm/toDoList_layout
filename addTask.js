@@ -1,5 +1,7 @@
 import { choicerAddClass } from './choicerAddClass.js';
 import { choicerPick } from './choicerPick.js';
+import { safe } from './localStorage.js';
+
 export function addTask() { 
    
     
@@ -21,7 +23,7 @@ export function addTask() {
              else
             valueTag = nameTag.value;
 
-            const main = document.getElementById("main");
+            const main = document.getElementById("main2");
 
             const newTask=document.createElement('div');
             newTask.classList.add('task');
@@ -47,6 +49,8 @@ export function addTask() {
             newTask.appendChild(task__block);
 
             main.appendChild(newTask);
+
+            safe();
         })
     }
 

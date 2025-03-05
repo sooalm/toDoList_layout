@@ -17,6 +17,9 @@
     gap:5em;
 }
 .main__task{
+ 
+}
+.main__div__task{
     display: flex;
     flex-direction: column;
     align-items: center;

@@ -1,6 +1,6 @@
 import { choicerAddClass } from './choicerAddClass.js';
 import { choicerPick } from './choicerPick.js';
-
+import { safe } from './localStorage.js';
 
 export function editTask() { 
     const main__task = document.getElementById("main"); 
@@ -9,6 +9,7 @@ export function editTask() {
         const child = event.target.closest(".task");
         if (!child) return;
         child.classList.toggle("task--through");
+        safe();
     })
         // Панель на место task
         main__task.addEventListener('click',(event)=>{
@@ -88,6 +89,7 @@ export function editTask() {
             deleteButton.addEventListener('click',(event)=>{
                 currentTask.remove();
                 panel_icons.remove();
+                safe();
             })
 
             updateButton.addEventListener('click',(event)=>{
@@ -98,7 +100,10 @@ export function editTask() {
                 currentTask.querySelector(".task__pic").replaceWith(svg);
                 
                 panel_icons.replaceWith(currentTask);
+
+                safe();
             })
+           
         })
 }
 }
