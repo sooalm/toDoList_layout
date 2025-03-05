@@ -33,7 +33,13 @@
  .task--through{
     position: relative;
     background:gray;
-    opacity:0.7;
+    opacity:0.5;
+ }
+ .task--through > * {
+    pointer-events: none;
+  }
+ .task--through  .task__category{
+    color:black;
  }
  .task--through::before{
     content: "";

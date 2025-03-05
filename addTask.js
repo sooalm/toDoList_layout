@@ -1,18 +1,7 @@
+import { choicer } from './choicerSvg.js';
 export function addTask() { 
-    const choicer = document.getElementById("choicer");
-    
-    if(choicer){
-    let lastChild=null;
-    choicer.addEventListener('click', (event) => {
-    const child = event.target.closest('.svgPic'); 
-    
-    if (!child) return;
-    
-    if(lastChild) lastChild.classList.remove('svgPic--hover');
-    child.classList.toggle('svgPic--hover');
-    lastChild=child;
-    })
-    }
+   
+    choicer("choicer");
 
     const addTask = document.getElementById("addTask");
     if(addTask){
@@ -43,7 +32,6 @@ export function addTask() {
             svg.classList.add("task__pic");
             let svg__use=document.createElementNS("http://www.w3.org/2000/svg","use");
             svg__use.setAttributeNS("http://www.w3.org/1999/xlink", 'href', "/assets/images/icons-sprites.svg#"+svgName);
-            // svg__use.setAttribute("href", "/assets/images/icons-sprites.svg#"+svgName);
             svg.appendChild(svg__use);
             newTask.appendChild(svg);
 
@@ -60,7 +48,6 @@ export function addTask() {
             task__block.appendChild(task__categoty);
             const smallButton=document.createElement("button");
             smallButton.classList.add('smallButton');
-            smallButton.classList.add('smallButton--task');
             smallButton.textContent="edit";
             task__block.appendChild(smallButton);
             newTask.appendChild(task__block);

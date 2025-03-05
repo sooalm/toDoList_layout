@@ -34,4 +34,10 @@
 }
 .task:not(.task--through):hover .task__pic{
     color:#53EAFD; 
+    fill:#53EAFD; 
+}
+.deleteButton__pic{
+    width:30px;
+    height:40px;
+    color:white;
 }

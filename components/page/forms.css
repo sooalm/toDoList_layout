@@ -31,3 +31,11 @@
   align-items: center;
   cursor: pointer;
 }
+.input--editElements{
+height:40px;
+}
+.input__panel_icons{
+    display:flex;
+    flex-direction: column;
+    gap:0.5em;
+}

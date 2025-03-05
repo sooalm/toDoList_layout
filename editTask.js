@@ -1,3 +1,5 @@
+import { choicer } from './choicerSvg.js';
+
 export function editTask() { 
     const main__task = document.getElementById("main"); 
     if(main__task){
@@ -6,5 +8,104 @@ export function editTask() {
         if (!child) return;
         child.classList.toggle("task--through");
     })
-    }
+        // Панель на место task
+        main__task.addEventListener('click',(event)=>{
+            const isButton = event.target.closest(".smallButton");
+            if (!isButton) return;
+            const currentTask = event.target.closest(".task");
+            if (!currentTask) return;
+
+            const panel_icons = document.createElement("div");
+
+            const newPanel = document.createElement('div');
+            newPanel.className = 'main__creationPanel ';
+
+            const inputTask = document.createElement("input");
+            inputTask.className="input input__taskDescription input--editElements";
+            inputTask.id="editTask";
+            inputTask.type = "text";
+            inputTask.value = currentTask.querySelector(".task__text").textContent;
+            inputTask.autocomplete="off";
+            newPanel.appendChild(inputTask);
+
+            const inputTag = document.createElement("input");
+            inputTag.className="input input__tags input--editElements";
+            inputTag.id="editTag";
+            inputTag.type = "text";
+            inputTag.value = currentTask.querySelector(".task__category").textContent;
+            inputTag.autocomplete="off";
+            newPanel.appendChild(inputTag);
+
+            const deleteButton = document.createElement("button");
+            deleteButton.classList.add("deleteButton","main__creationPanel__smallButton","input--editElements");
+
+            const svg = document.createElementNS("http://www.w3.org/2000/svg","svg");
+            svg.classList.add("deleteButton__pic"); 
+            // svg.id="trashcan";
+            const myuse=document.createElementNS("http://www.w3.org/2000/svg","use");
+            myuse.setAttributeNS("http://www.w3.org/1999/xlink", 'href', "/assets/images/icons-sprites.svg#trashcan");
+            svg.appendChild(myuse);
+            deleteButton.appendChild(svg);
+            
+            newPanel.appendChild(deleteButton);
+
+            const updateButton = document.createElement("button");
+            updateButton.classList.add("smallButton","main__creationPanel__smallButton","input--editElements");
+            updateButton.textContent="update";
+            newPanel.appendChild(updateButton);
+         
+            panel_icons.appendChild(newPanel);
+            panel_icons.className="input__panel_icons";
+
+            const choicer__block = document.createElement('div');
+            choicer__block.id = 'choicerSvg';
+            choicer__block.className = 'svgChoicer';
+
+            const icons = [
+              'meds', 'shield', 'sword', 'bowl',
+              'horseKnight', 'boots', 'pizza', 'book'
+            ];
+
+            icons.forEach(iconName => {
+              const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+              svg.setAttribute('name', iconName);
+              svg.classList.add('svgPic');
+            
+              const use = document.createElementNS('http://www.w3.org/2000/svg', 'use');
+              use.setAttributeNS('http://www.w3.org/1999/xlink', 'xlink:href', `/assets/images/icons-sprites.svg#${iconName}`);
+            
+              svg.appendChild(use);
+              choicer__block.appendChild(svg);
+            });
+
+            choicer("choicerSvg");
+
+            // choicer__block.addEventListener("click",(event)=>{
+            //     let svg = document.querySelector('.svgPic--hover');
+            //     let svgName ="unknown";
+            //     if(svg) svgName=svg.getAttribute('name');
+    
+            //     svg=document.createElementNS("http://www.w3.org/2000/svg","svg");
+            //     svg.classList.add("task__pic");
+            //     let svg__use=document.createElementNS("http://www.w3.org/2000/svg","use");
+            //     svg__use.setAttributeNS("http://www.w3.org/1999/xlink", 'href', "/assets/images/icons-sprites.svg#"+svgName);
+            //     svg.appendChild(svg__use);
+            //     newTask.appendChild(svg);
+            // })
+
+            panel_icons.append(choicer__block);
+            currentTask.replaceWith(panel_icons);
+
+            deleteButton.addEventListener('click',(event)=>{
+                currentTask.remove();
+                panel_icons.remove();
+            })
+
+            updateButton.addEventListener('click',(event)=>{
+                currentTask.querySelector(".task__category").textContent = inputTag.value;
+                currentTask.querySelector(".task__text").textContent = inputTask.value;
+                panel_icons.replaceWith(currentTask);
+            })
+        })
+}
 }

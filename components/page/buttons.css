@@ -17,25 +17,29 @@
     background: white;
     border-radius:1em;
 }
-.smallButton--add:hover{
+.main__creationPanel__smallButton:hover{
     background-color: black;
     color:white;
     transition:0.3s;
 }
-/* .smallButton--task{
-    height:55px;
-    width:55px;
-    align-self:center;
-    margin-right:5px;
-} */
 .task .smallButton{
     height:55px;
     width:55px;
     align-self:center;
     margin-right:5px;
 }
+.task--through .smallButton{
+    background: gray;
+}
 .task:not(.task--through):hover .smallButton:hover{
     background-color: black;
     color:white;
     transition:0.3s;
+}
+.deleteButton{
+    width:50px;
+    height:50px;
+    background:#F76164;
+    border:1px solid #D1D5DC;
+    border-radius:15px;
 }
