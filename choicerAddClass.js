@@ -1,6 +1,7 @@
-export function choicer(id) { 
-const choicer = document.getElementById(id);
+
+export function choicerAddClass(id) { 
     
+    const choicer = document.getElementById(id);
     if(choicer){
     let lastChild=null;
     choicer.addEventListener('click', (event) => {
@@ -14,5 +15,6 @@ const choicer = document.getElementById(id);
     })
     }
 
+   
 
 }

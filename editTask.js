@@ -1,5 +1,7 @@
-import { choicer } from './choicerSvg.js';
+import { choicerAddClass } from './choicerAddClass.js';
+import { svg,choicerPick } from './choicerPick.js';
 
+choicerPick();
 export function editTask() { 
     const main__task = document.getElementById("main"); 
     if(main__task){
@@ -78,7 +80,7 @@ export function editTask() {
               choicer__block.appendChild(svg);
             });
 
-            choicer("choicerSvg");
+            choicerAddClass();
 
             // choicer__block.addEventListener("click",(event)=>{
             //     let svg = document.querySelector('.svgPic--hover');

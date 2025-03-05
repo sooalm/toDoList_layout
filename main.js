@@ -3,7 +3,7 @@ import { sortTags } from './sortTags.js';
 import { clearRestart } from './clearRestart.js';
 import { search } from './search.js';
 import { editTask } from './editTask.js';
-import { choicer } from './choicerSvg.js';
+
 
 addTask();
 clearRestart();
