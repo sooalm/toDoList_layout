@@ -1,12 +1,13 @@
 import { choicerAddClass } from './choicerAddClass.js';
-import { svg,choicerPick } from './choicerPick.js';
+import { choicerPick } from './choicerPick.js';
 export function addTask() { 
    
-    choicerAddClass("choicer");
-
+    
+    let this_choicer = choicerAddClass("choicer");
     const addTask = document.getElementById("addTask");
     if(addTask){
         addTask.addEventListener('click', (event) => {
+    
             let nameTask = document.getElementById("nameTask");
             let valueTask = nameTask.value;
             if(!valueTask) {
@@ -25,17 +26,7 @@ export function addTask() {
             const newTask=document.createElement('div');
             newTask.classList.add('task');
             
-            // let svg = document.querySelector('.svgPic--hover');
-            // let svgName ="unknown";
-            // if(svg) svgName=svg.getAttribute('name');
-
-            // svg=document.createElementNS("http://www.w3.org/2000/svg","svg");
-            // svg.classList.add("task__pic");
-            // let svg__use=document.createElementNS("http://www.w3.org/2000/svg","use");
-            // svg__use.setAttributeNS("http://www.w3.org/1999/xlink", 'href', "/assets/images/icons-sprites.svg#"+svgName);
-            // svg.appendChild(svg__use);
-            
-            choicerPick();
+            let svg = choicerPick(this_choicer);
             newTask.appendChild(svg);
 
             const task__text = document.createElement('span');

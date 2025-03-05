@@ -1,7 +1,7 @@
 import { choicerAddClass } from './choicerAddClass.js';
-import { svg,choicerPick } from './choicerPick.js';
+import { choicerPick } from './choicerPick.js';
 
-choicerPick();
+
 export function editTask() { 
     const main__task = document.getElementById("main"); 
     if(main__task){
@@ -41,13 +41,12 @@ export function editTask() {
             const deleteButton = document.createElement("button");
             deleteButton.classList.add("deleteButton","main__creationPanel__smallButton","input--editElements");
 
-            const svg = document.createElementNS("http://www.w3.org/2000/svg","svg");
-            svg.classList.add("deleteButton__pic"); 
-            // svg.id="trashcan";
+            const svgTrashcan = document.createElementNS("http://www.w3.org/2000/svg","svg");
+            svgTrashcan.classList.add("deleteButton__pic"); 
             const myuse=document.createElementNS("http://www.w3.org/2000/svg","use");
             myuse.setAttributeNS("http://www.w3.org/1999/xlink", 'href', "/assets/images/icons-sprites.svg#trashcan");
-            svg.appendChild(myuse);
-            deleteButton.appendChild(svg);
+            svgTrashcan.appendChild(myuse);
+            deleteButton.appendChild(svgTrashcan);
             
             newPanel.appendChild(deleteButton);
 
@@ -80,23 +79,11 @@ export function editTask() {
               choicer__block.appendChild(svg);
             });
 
-            choicerAddClass();
-
-            // choicer__block.addEventListener("click",(event)=>{
-            //     let svg = document.querySelector('.svgPic--hover');
-            //     let svgName ="unknown";
-            //     if(svg) svgName=svg.getAttribute('name');
-    
-            //     svg=document.createElementNS("http://www.w3.org/2000/svg","svg");
-            //     svg.classList.add("task__pic");
-            //     let svg__use=document.createElementNS("http://www.w3.org/2000/svg","use");
-            //     svg__use.setAttributeNS("http://www.w3.org/1999/xlink", 'href', "/assets/images/icons-sprites.svg#"+svgName);
-            //     svg.appendChild(svg__use);
-            //     newTask.appendChild(svg);
-            // })
-
             panel_icons.append(choicer__block);
             currentTask.replaceWith(panel_icons);
+
+            let this_choicer = choicerAddClass(choicer__block.id);
+            
 
             deleteButton.addEventListener('click',(event)=>{
                 currentTask.remove();
@@ -106,6 +93,10 @@ export function editTask() {
             updateButton.addEventListener('click',(event)=>{
                 currentTask.querySelector(".task__category").textContent = inputTag.value;
                 currentTask.querySelector(".task__text").textContent = inputTask.value;
+
+               let svg=  choicerPick(this_choicer);
+                currentTask.querySelector(".task__pic").replaceWith(svg);
+                
                 panel_icons.replaceWith(currentTask);
             })
         })

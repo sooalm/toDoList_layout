@@ -1,12 +1,14 @@
-
+// let this_choicer;
 export function choicerAddClass(id) { 
-    
-    const choicer = document.getElementById(id);
+
+    let choicer = document.getElementById(id);
+
+    let this_choicer = choicer;
+
     if(choicer){
-    let lastChild=null;
+    let lastChild=null; 
     choicer.addEventListener('click', (event) => {
     const child = event.target.closest('.svgPic'); 
-    console.log("child = "+child);
     if (!child) return;
    
     if(lastChild) lastChild.classList.remove('svgPic--hover');
@@ -15,6 +17,6 @@ export function choicerAddClass(id) {
     })
     }
 
-   
-
+    return this_choicer;
 }
+// export {this_choicer};

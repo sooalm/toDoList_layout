@@ -1,6 +1,7 @@
-let svg;
-export function choicerPick(){
-svg= document.querySelector('.svgPic--hover');
+// let svg;
+export function choicerPick(this_choicer){
+ 
+let svg= this_choicer.querySelector('.svgPic--hover');
 let svgName ="unknown";
 if(svg) svgName=svg.getAttribute('name');
 
@@ -12,4 +13,4 @@ svg.appendChild(svg__use);
 
 return svg;
 }
-export { svg };
+// export { svg };
