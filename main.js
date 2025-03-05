@@ -14,6 +14,8 @@ sortTags();
 search();
 editTask();
 
+revive();
 document.addEventListener('DOMContentLoaded', () => {
     revive();
+    document.querySelector("main").style.opacity = '1';
   });

@@ -41,3 +41,26 @@
     height:40px;
     color:white;
 }
+
+@media(max-width:1600px){
+    .task__pic{
+       height:30px;
+       width:30px;
+    }
+    .deleteButton__pic{
+        height:20px;
+        width:20px;
+    }
+    .svgPic{
+        width:15px;
+        height:15px;
+    }
+  }
+
+  @media(max-width:700px){
+    .task__pic{
+        height:25px;
+        width:25px;
+     }
+     
+  }

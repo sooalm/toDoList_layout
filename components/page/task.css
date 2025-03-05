@@ -52,3 +52,25 @@
     transform: translateY(-50%);
     border-radius: 10px;
  }
+
+ @media(max-width:1600px){
+   .task{
+      height:40px;
+   }
+   .task__text{
+      font-size:1em;
+   }
+   .task__category{
+      font-size:0.8em;
+   }
+ }
+
+ 
+ @media(max-width:700px){
+   .task{
+      height:40px;
+   }
+   .task__category{
+      font-size:1em;
+   }
+ }
