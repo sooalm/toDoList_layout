@@ -7,6 +7,7 @@
     cursor: pointer;
     display:flex;
     user-select: none;  
+    touch-action: manipulation;
 }
 .task__text{
     align-self:center;
